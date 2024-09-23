@@ -1,0 +1,173 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.h
+  * @brief          : Header for main.c file.
+  *                   This file contains the common defines of the application.
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2024 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __MAIN_H
+#define __MAIN_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* Includes ------------------------------------------------------------------*/
+#include "stm32f1xx_hal.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+/* Exported types ------------------------------------------------------------*/
+/* USER CODE BEGIN ET */
+
+/* USER CODE END ET */
+
+/* Exported constants --------------------------------------------------------*/
+/* USER CODE BEGIN EC */
+
+/* USER CODE END EC */
+
+/* Exported macro ------------------------------------------------------------*/
+/* USER CODE BEGIN EM */
+
+/* USER CODE END EM */
+
+/* Exported functions prototypes ---------------------------------------------*/
+void Error_Handler(void);
+
+/* USER CODE BEGIN EFP */
+
+/* USER CODE END EFP */
+
+/* Private defines -----------------------------------------------------------*/
+#define HEADLIGHT_Pin GPIO_PIN_13
+#define HEADLIGHT_GPIO_Port GPIOC
+#define NTC_ML1_Pin GPIO_PIN_0
+#define NTC_ML1_GPIO_Port GPIOC
+#define NTC_ML2_Pin GPIO_PIN_1
+#define NTC_ML2_GPIO_Port GPIOC
+#define NTC_MR1_Pin GPIO_PIN_2
+#define NTC_MR1_GPIO_Port GPIOC
+#define NTC_MR2_Pin GPIO_PIN_3
+#define NTC_MR2_GPIO_Port GPIOC
+#define NTC_MOTOR_DRIVER_1_Pin GPIO_PIN_0
+#define NTC_MOTOR_DRIVER_1_GPIO_Port GPIOA
+#define NTC_MOTOR_DRIVER_2_Pin GPIO_PIN_1
+#define NTC_MOTOR_DRIVER_2_GPIO_Port GPIOA
+#define VBAT_Pin GPIO_PIN_4
+#define VBAT_GPIO_Port GPIOA
+#define ML1_CURRENT_Pin GPIO_PIN_5
+#define ML1_CURRENT_GPIO_Port GPIOA
+#define MR1_CURRENT_Pin GPIO_PIN_6
+#define MR1_CURRENT_GPIO_Port GPIOA
+#define ML2_CURRENT_Pin GPIO_PIN_7
+#define ML2_CURRENT_GPIO_Port GPIOA
+#define MR2_CURRENT_Pin GPIO_PIN_4
+#define MR2_CURRENT_GPIO_Port GPIOC
+#define HX_DT1_Pin GPIO_PIN_5
+#define HX_DT1_GPIO_Port GPIOC
+#define HX_SCK1_Pin GPIO_PIN_0
+#define HX_SCK1_GPIO_Port GPIOB
+#define HX_DT2_Pin GPIO_PIN_1
+#define HX_DT2_GPIO_Port GPIOB
+#define HX_SCK2_Pin GPIO_PIN_2
+#define HX_SCK2_GPIO_Port GPIOB
+#define CONTACTOR_RLY_Pin GPIO_PIN_7
+#define CONTACTOR_RLY_GPIO_Port GPIOE
+#define PRE_CHARGE_RLY_Pin GPIO_PIN_8
+#define PRE_CHARGE_RLY_GPIO_Port GPIOE
+#define ACT2_CHA_Pin GPIO_PIN_9
+#define ACT2_CHA_GPIO_Port GPIOE
+#define ACT2_CHB_Pin GPIO_PIN_10
+#define ACT2_CHB_GPIO_Port GPIOE
+#define ACT1_PWM_Pin GPIO_PIN_11
+#define ACT1_PWM_GPIO_Port GPIOE
+#define ACT_LIMIT_SWITCH_Pin GPIO_PIN_12
+#define ACT_LIMIT_SWITCH_GPIO_Port GPIOE
+#define ACT2_PWM_Pin GPIO_PIN_13
+#define ACT2_PWM_GPIO_Port GPIOE
+#define ACT1_DIR_Pin GPIO_PIN_14
+#define ACT1_DIR_GPIO_Port GPIOE
+#define ACT2_DIR_Pin GPIO_PIN_15
+#define ACT2_DIR_GPIO_Port GPIOE
+#define HX_SCK4_Pin GPIO_PIN_12
+#define HX_SCK4_GPIO_Port GPIOB
+#define HX_DT4_Pin GPIO_PIN_13
+#define HX_DT4_GPIO_Port GPIOB
+#define HX_SCK3_Pin GPIO_PIN_14
+#define HX_SCK3_GPIO_Port GPIOB
+#define HX_DT3_Pin GPIO_PIN_15
+#define HX_DT3_GPIO_Port GPIOB
+#define EXTRA_IO2_Pin GPIO_PIN_10
+#define EXTRA_IO2_GPIO_Port GPIOD
+#define EXTRA_IO1_Pin GPIO_PIN_11
+#define EXTRA_IO1_GPIO_Port GPIOD
+#define MR_IN2_Pin GPIO_PIN_12
+#define MR_IN2_GPIO_Port GPIOD
+#define MR_IN1_Pin GPIO_PIN_13
+#define MR_IN1_GPIO_Port GPIOD
+#define ML_IN1_Pin GPIO_PIN_14
+#define ML_IN1_GPIO_Port GPIOD
+#define MR_IN2D15_Pin GPIO_PIN_15
+#define MR_IN2D15_GPIO_Port GPIOD
+#define ML_AN1_Pin GPIO_PIN_6
+#define ML_AN1_GPIO_Port GPIOC
+#define MR_AN1_Pin GPIO_PIN_7
+#define MR_AN1_GPIO_Port GPIOC
+#define ML_AN2_Pin GPIO_PIN_8
+#define ML_AN2_GPIO_Port GPIOC
+#define MR_AN2_Pin GPIO_PIN_9
+#define MR_AN2_GPIO_Port GPIOC
+#define EMERGENCY_DETECTION_Pin GPIO_PIN_8
+#define EMERGENCY_DETECTION_GPIO_Port GPIOA
+#define ACT1_CHA_Pin GPIO_PIN_15
+#define ACT1_CHA_GPIO_Port GPIOA
+#define ACT1_CHB_Pin GPIO_PIN_12
+#define ACT1_CHB_GPIO_Port GPIOC
+#define ML1_CHA_Pin GPIO_PIN_0
+#define ML1_CHA_GPIO_Port GPIOD
+#define ML1_CHB_Pin GPIO_PIN_1
+#define ML1_CHB_GPIO_Port GPIOD
+#define MR1_CHA_Pin GPIO_PIN_2
+#define MR1_CHA_GPIO_Port GPIOD
+#define MR1_CHB_Pin GPIO_PIN_3
+#define MR1_CHB_GPIO_Port GPIOD
+#define ML2_CHA_Pin GPIO_PIN_4
+#define ML2_CHA_GPIO_Port GPIOD
+#define ML2_CHB_Pin GPIO_PIN_5
+#define ML2_CHB_GPIO_Port GPIOD
+#define MR2_CHA_Pin GPIO_PIN_6
+#define MR2_CHA_GPIO_Port GPIOD
+#define MR2_CHB_Pin GPIO_PIN_7
+#define MR2_CHB_GPIO_Port GPIOD
+#define SPI1_CS1_Pin GPIO_PIN_0
+#define SPI1_CS1_GPIO_Port GPIOE
+#define SPI1_CS2_Pin GPIO_PIN_1
+#define SPI1_CS2_GPIO_Port GPIOE
+
+/* USER CODE BEGIN Private defines */
+
+/* USER CODE END Private defines */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __MAIN_H */

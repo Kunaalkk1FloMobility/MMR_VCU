@@ -1,0 +1,145 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file    gpio.c
+  * @brief   This file provides code for the configuration
+  *          of all used GPIO pins.
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2024 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+
+/* Includes ------------------------------------------------------------------*/
+#include "gpio.h"
+
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
+
+/*----------------------------------------------------------------------------*/
+/* Configure GPIO                                                             */
+/*----------------------------------------------------------------------------*/
+/* USER CODE BEGIN 1 */
+
+/* USER CODE END 1 */
+
+/** Configure pins as
+        * Analog
+        * Input
+        * Output
+        * EVENT_OUT
+        * EXTI
+*/
+void MX_GPIO_Init(void)
+{
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOE_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, HEADLIGHT_Pin|HX_DT1_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, HX_SCK1_Pin|HX_DT2_Pin|HX_SCK2_Pin|HX_SCK4_Pin
+                          |HX_DT4_Pin|HX_SCK3_Pin|HX_DT3_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOE, CONTACTOR_RLY_Pin|PRE_CHARGE_RLY_Pin|ACT1_DIR_Pin|ACT2_DIR_Pin
+                          |SPI1_CS1_Pin|SPI1_CS2_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, EXTRA_IO2_Pin|EXTRA_IO1_Pin|MR_IN2_Pin|MR_IN1_Pin
+                          |ML_IN1_Pin|MR_IN2D15_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : PCPin PCPin */
+  GPIO_InitStruct.Pin = HEADLIGHT_Pin|HX_DT1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PBPin PBPin PBPin PBPin
+                           PBPin PBPin PBPin */
+  GPIO_InitStruct.Pin = HX_SCK1_Pin|HX_DT2_Pin|HX_SCK2_Pin|HX_SCK4_Pin
+                          |HX_DT4_Pin|HX_SCK3_Pin|HX_DT3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PEPin PEPin PEPin PEPin
+                           PEPin PEPin */
+  GPIO_InitStruct.Pin = CONTACTOR_RLY_Pin|PRE_CHARGE_RLY_Pin|ACT1_DIR_Pin|ACT2_DIR_Pin
+                          |SPI1_CS1_Pin|SPI1_CS2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PEPin PEPin */
+  GPIO_InitStruct.Pin = ACT2_CHA_Pin|ACT2_CHB_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = ACT_LIMIT_SWITCH_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(ACT_LIMIT_SWITCH_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PDPin PDPin PDPin PDPin
+                           PDPin PDPin */
+  GPIO_InitStruct.Pin = EXTRA_IO2_Pin|EXTRA_IO1_Pin|MR_IN2_Pin|MR_IN1_Pin
+                          |ML_IN1_Pin|MR_IN2D15_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = EMERGENCY_DETECTION_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(EMERGENCY_DETECTION_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = ACT1_CHA_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(ACT1_CHA_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = ACT1_CHB_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(ACT1_CHB_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PDPin PDPin PDPin PDPin
+                           PDPin PDPin PDPin PDPin */
+  GPIO_InitStruct.Pin = ML1_CHA_Pin|ML1_CHB_Pin|MR1_CHA_Pin|MR1_CHB_Pin
+                          |ML2_CHA_Pin|ML2_CHB_Pin|MR2_CHA_Pin|MR2_CHB_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+}
+
+/* USER CODE BEGIN 2 */
+
+/* USER CODE END 2 */
