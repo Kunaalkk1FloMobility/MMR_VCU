@@ -57,8 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define HEADLIGHT_Pin GPIO_PIN_13
-#define HEADLIGHT_GPIO_Port GPIOC
+#define LED_BUILTIN_Pin GPIO_PIN_13
+#define LED_BUILTIN_GPIO_Port GPIOC
 #define NTC_ML1_Pin GPIO_PIN_0
 #define NTC_ML1_GPIO_Port GPIOC
 #define NTC_ML2_Pin GPIO_PIN_1
@@ -107,6 +107,10 @@ void Error_Handler(void);
 #define ACT1_DIR_GPIO_Port GPIOE
 #define ACT2_DIR_Pin GPIO_PIN_15
 #define ACT2_DIR_GPIO_Port GPIOE
+#define ADBL_LED_Pin GPIO_PIN_10
+#define ADBL_LED_GPIO_Port GPIOB
+#define EXTRA_TIMER_Pin GPIO_PIN_11
+#define EXTRA_TIMER_GPIO_Port GPIOB
 #define HX_SCK4_Pin GPIO_PIN_12
 #define HX_SCK4_GPIO_Port GPIOB
 #define HX_DT4_Pin GPIO_PIN_13
@@ -115,10 +119,10 @@ void Error_Handler(void);
 #define HX_SCK3_GPIO_Port GPIOB
 #define HX_DT3_Pin GPIO_PIN_15
 #define HX_DT3_GPIO_Port GPIOB
-#define EXTRA_IO2_Pin GPIO_PIN_10
-#define EXTRA_IO2_GPIO_Port GPIOD
-#define EXTRA_IO1_Pin GPIO_PIN_11
-#define EXTRA_IO1_GPIO_Port GPIOD
+#define BUZZER_Pin GPIO_PIN_10
+#define BUZZER_GPIO_Port GPIOD
+#define HEADLIGHT_Pin GPIO_PIN_11
+#define HEADLIGHT_GPIO_Port GPIOD
 #define MR_IN2_Pin GPIO_PIN_12
 #define MR_IN2_GPIO_Port GPIOD
 #define MR_IN1_Pin GPIO_PIN_13

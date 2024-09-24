@@ -119,8 +119,8 @@ void Error_Handler(void);
 #define HX_SCK3_GPIO_Port GPIOB
 #define HX_DT3_Pin GPIO_PIN_15
 #define HX_DT3_GPIO_Port GPIOB
-#define EXTRA_IO_Pin GPIO_PIN_10
-#define EXTRA_IO_GPIO_Port GPIOD
+#define BUZZER_Pin GPIO_PIN_10
+#define BUZZER_GPIO_Port GPIOD
 #define HEADLIGHT_Pin GPIO_PIN_11
 #define HEADLIGHT_GPIO_Port GPIOD
 #define MR_IN2_Pin GPIO_PIN_12
@@ -161,10 +161,10 @@ void Error_Handler(void);
 #define MR2_CHA_GPIO_Port GPIOD
 #define MR2_CHB_Pin GPIO_PIN_7
 #define MR2_CHB_GPIO_Port GPIOD
-#define SPI1_CS1_Pin GPIO_PIN_0
-#define SPI1_CS1_GPIO_Port GPIOE
-#define SPI1_CS2_Pin GPIO_PIN_1
-#define SPI1_CS2_GPIO_Port GPIOE
+#define SPI1_CS_Pin GPIO_PIN_0
+#define SPI1_CS_GPIO_Port GPIOE
+#define SPI1_CD_Pin GPIO_PIN_1
+#define SPI1_CD_GPIO_Port GPIOE
 
 /* USER CODE BEGIN Private defines */
 

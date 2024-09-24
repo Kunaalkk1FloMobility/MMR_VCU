@@ -60,10 +60,10 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, CONTACTOR_RLY_Pin|PRE_CHARGE_RLY_Pin|ACT1_DIR_Pin|ACT2_DIR_Pin
-                          |SPI1_CS1_Pin|SPI1_CS2_Pin, GPIO_PIN_RESET);
+                          |SPI1_CS_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, EXTRA_IO_Pin|HEADLIGHT_Pin|MR_IN2_Pin|MR_IN1_Pin
+  HAL_GPIO_WritePin(GPIOD, BUZZER_Pin|HEADLIGHT_Pin|MR_IN2_Pin|MR_IN1_Pin
                           |ML_IN1_Pin|MR_IN2D15_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : PCPin PCPin */
@@ -83,9 +83,9 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PEPin PEPin PEPin PEPin
-                           PEPin PEPin */
+                           PEPin */
   GPIO_InitStruct.Pin = CONTACTOR_RLY_Pin|PRE_CHARGE_RLY_Pin|ACT1_DIR_Pin|ACT2_DIR_Pin
-                          |SPI1_CS1_Pin|SPI1_CS2_Pin;
+                          |SPI1_CS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -97,15 +97,15 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = ACT_LIMIT_SWITCH_Pin;
+  /*Configure GPIO pins : PEPin PEPin */
+  GPIO_InitStruct.Pin = ACT_LIMIT_SWITCH_Pin|SPI1_CD_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(ACT_LIMIT_SWITCH_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PDPin PDPin PDPin PDPin
                            PDPin PDPin */
-  GPIO_InitStruct.Pin = EXTRA_IO_Pin|HEADLIGHT_Pin|MR_IN2_Pin|MR_IN1_Pin
+  GPIO_InitStruct.Pin = BUZZER_Pin|HEADLIGHT_Pin|MR_IN2_Pin|MR_IN1_Pin
                           |ML_IN1_Pin|MR_IN2D15_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
